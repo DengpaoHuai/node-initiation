@@ -1,33 +1,39 @@
-import http from 'http';
+import express from 'express';
+import bodyParser from 'body-parser';
+import httpClient from './libs/http-client.js';
+import cors from 'cors';
+const app = express();
 
-const getData = async (count) => {
-  console.log('https://www.swapi.tech/api/planets?page=' + count + '&limit=10');
-  const response = await fetch(
-    'https://www.swapi.tech/api/planets?page=' + count + '&limit=10',
-  );
-  return response.json();
-};
-
-const server = http.createServer((req, res) => {
-  // console.log(req);
-  //console.log(req.url);
-  const arrayPromises = [1, 2, 3, 4, 5].map((page) => {
-    return getData(page);
-  });
-  let displayPlanets = '';
-  Promise.all(arrayPromises).then((values) => {
-    console.log(values);
-    values.forEach((item) => {
-      console.log(item);
-      item.results.forEach((planet) => {
-        displayPlanets += planet.name;
-      });
-    });
-    res.writeHead(201, 'ok');
-    res.end(displayPlanets);
+app.use(bodyParser.json());
+app.use(
+  cors({
+    origin: '*',
+  }),
+);
+app.get('/', (req, res) => {
+  res.json({
+    ok: 'ok',
   });
 });
 
-server.listen(8080, () => {
-  console.log('connecté !');
+/*
+fetch(url, {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({
+    title: 'Star Wars',
+    year: 1977,
+  }),
+});
+*/
+app.post('/movie', async (req, res) => {
+  console.log(req.body);
+  await httpClient.post('/movies', req.body);
+  res.json(req.body);
+});
+
+app.listen(5497, () => {
+  console.log('toto');
 });
