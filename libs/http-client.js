@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const url = 'https://crudcrud.com/api/6d6b1106bdc744abb1d9e167746cb867';
+export const url = 'https://crudcrud.com/api/f3f48c10b52c4acab9c1dc1f65b3986f';
 
 const httpClient = axios.create({
   baseURL: url,
