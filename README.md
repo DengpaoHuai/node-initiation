@@ -6,3 +6,9 @@ npx tsc --init
 
 //dev dependencies
 npm i -D
+
+//coincoin :
+https://random-d.uk/api/random
+
+//dogs :
+https://random.dog/woof.json
