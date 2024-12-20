@@ -40,3 +40,15 @@ app.post('/movie', async (req, res) => {
 app.listen(5497, () => {
   console.log('toto');
 });
+
+/*
+fetch('http://127.0.0.1:5497/movie', {
+  method: 'POST',
+  headers: {
+    contentType: 'application/json',
+  },
+  body: JSON.stringify({
+    title: 'demo',
+  }),
+});
+*/
