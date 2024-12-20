@@ -28,11 +28,14 @@ fetch(url, {
   }),
 });
 */
+/*GET fetch*/
 app.post('/movie', async (req, res) => {
   console.log(req.body);
   await httpClient.post('/movies', req.body);
+
   res.json(req.body);
 });
+/*GET axios*/
 
 app.listen(5497, () => {
   console.log('toto');
