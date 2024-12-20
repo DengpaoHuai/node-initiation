@@ -1,0 +1,7 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"test axios then","248","axios then","groupe de test","Fri Dec 20 13:55:28 CET 2024","passed","Fri Dec 20 13:55:28 CET 2024","","","",""
+"","44","axios then","groupe de test","Fri Dec 20 13:49:36 CET 2024","passed","Fri Dec 20 13:49:36 CET 2024","","","",""
+"test axios then","145","axios await","groupe de test","Fri Dec 20 13:55:28 CET 2024","passed","Fri Dec 20 13:55:28 CET 2024","","","",""
+"","226","axios await","groupe de test","Fri Dec 20 13:49:35 CET 2024","passed","Fri Dec 20 13:49:36 CET 2024","","","",""
+"This test verifies the sum function for two numbers.","12","nom","groupe de test","Fri Dec 20 13:42:15 CET 2024","passed","Fri Dec 20 13:42:15 CET 2024","","","",""
+"","14","nom","groupe de test","Fri Dec 20 13:45:42 CET 2024","passed","Fri Dec 20 13:45:42 CET 2024","","","",""
