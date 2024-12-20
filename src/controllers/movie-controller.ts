@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import httpClient, { url } from '../../libs/http-client';
+import { postData } from '../../services/post-data';
 
 export const helloWorld = (req: Request, res: Response) => {
   res.json({
@@ -20,11 +21,13 @@ export const createMovie2 = (req: Request, res: Response) => {
   });
 };
 
+type Movie = {
+  title: string;
+};
 export const createMovie = async (req: Request, res: Response) => {
   console.log(req.body);
-  await httpClient.post('/movies', req.body);
-
-  res.json(req.body);
+  const response = await postData<Movie>(httpClient, req.body);
+  res.json(response);
 };
 
 export const getMovie = (req: Request, res: Response) => {
